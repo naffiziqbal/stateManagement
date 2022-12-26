@@ -7,9 +7,9 @@ const Child = () => {
   const initialState = 0;
   const reducer = (state, action) => {
     if (action.type == "INCREMENT") {
-      return state + action.number;
+      return state + action.payload;
     } else if (action.type == "DECREMENT") {
-      return state - action.number;
+      return state - action.payload;
     } else {
       return state;
     }
@@ -21,10 +21,10 @@ const Child = () => {
         <h1>Child</h1>
         <h1>{state}</h1>
         <div className="buttons flex justify-between">
-          <button onClick={() => dispatch({ type: "DECREMENT", number : 5 })}>
+          <button onClick={() => dispatch({ type: "DECREMENT", payload : 5 })}>
             Decrement
           </button>
-          <button onClick={() => dispatch({ type: "INCREMENT", number : 5 })}>
+          <button onClick={() => dispatch({ type: "INCREMENT", payload : 5 })}>
             Increment
           </button>
         </div>
